@@ -17,5 +17,7 @@ public class AdminController {
         System.out.println("`/admins/view-admin-profile GET` got triggered");
     }
 
+    // comment added
+
 
 }
