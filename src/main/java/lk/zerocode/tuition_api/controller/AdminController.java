@@ -12,7 +12,6 @@ public class AdminController {
     void adminSignIn(@RequestBody AdminLoginRequest rq){
         System.out.println();
         System.out.println("`/admins/admin-sign-in POST` got triggered");
-
     }
 
     @GetMapping("/admins/view-admin-profile")
@@ -35,6 +34,12 @@ public class AdminController {
         System.out.println("Admin Id : " + adminId);
     }
 
-    // new comment added
+    @PostMapping("/admins/{admin-id}/tutors/{tutor-id}/add-subject-profiles")
+    void createSubjectProfile(@PathVariable("admin-id") String adminId, @PathVariable("tutor-id") String tutorId, @RequestBody CreateEducationPackageRequest rq){
+        System.out.println();
+        System.out.println("`/admins/{admin-id}/tutors/{tutor-id}/add-subject-profiles POST` got triggered");
+        System.out.println("Admin Id : " + adminId);
+        System.out.println("Tutor Id : " + tutorId);
+    }
 
 }
