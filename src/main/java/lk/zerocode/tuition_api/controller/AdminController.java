@@ -35,7 +35,6 @@ public class AdminController {
         System.out.println("`/admins/{admin-id}/tutors/{tutor-id}/add-subject-profiles POST` got triggered");
         System.out.println("Admin Id : " + adminId);
         System.out.println("Tutor Id : " + tutorId);
-
     }
 
     @PostMapping("/admins/{admin-id}/education-packages")
