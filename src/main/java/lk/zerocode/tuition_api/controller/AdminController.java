@@ -15,10 +15,11 @@ public class AdminController {
         System.out.println("`/admins/admin-sign-in POST` got triggered");
     }
 
-    @GetMapping("/admins/view-admin-profile")
-    void viewAdminProfile(){
+    @GetMapping("/admins/{admin-id}/view-admin-profile")
+    void viewAdminProfile(@PathVariable("admin-id") String adminId){
         System.out.println();
         System.out.println("`/admins/view-admin-profile GET` got triggered");
+        System.out.println("Admin Id : " + adminId);
     }
 
     @PostMapping("/admins/{admin-id}/tutors")
