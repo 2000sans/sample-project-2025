@@ -1,9 +1,6 @@
 package lk.zerocode.tuition_api.controller;
 
-import lk.zerocode.tuition_api.controller.dto.admin_related.AdminLoginRequest;
-import lk.zerocode.tuition_api.controller.dto.admin_related.CreateEducationPackageRequest;
-import lk.zerocode.tuition_api.controller.dto.admin_related.CreateTutorRequest;
-import lk.zerocode.tuition_api.controller.dto.admin_related.SortEducationPackagesRequest;
+import lk.zerocode.tuition_api.controller.dto.admin_related.*;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -27,14 +24,16 @@ public class AdminController {
         System.out.println();
         System.out.println("`/admins/{admin-id}/tutors POST` got triggered");
         System.out.println("Admin Id : " + adminId);
+        rq.setAdminId(adminId);
     }
 
-    @PostMapping("/admins/{admin-id}/tutors/{tutor-id}/add-subject-profiles")
-    void createSubjectProfile(@PathVariable("admin-id") String adminId, @PathVariable("tutor-id") String tutorId, @RequestBody CreateEducationPackageRequest rq){
+    @PostMapping("/admins/{admin-id}/add-subject-profiles")
+    void createSubjectProfile(@PathVariable("admin-id") String adminId, @RequestBody CreateSubjectProfileRequest rq){
         System.out.println();
-        System.out.println("`/admins/{admin-id}/tutors/{tutor-id}/add-subject-profiles POST` got triggered");
+        System.out.println("`/admins/{admin-id}/add-subject-profiles POST` got triggered");
         System.out.println("Admin Id : " + adminId);
-        System.out.println("Tutor Id : " + tutorId);
+        rq.setAdminId(adminId);
+
     }
 
     @PostMapping("/admins/{admin-id}/education-packages")
@@ -42,6 +41,9 @@ public class AdminController {
         System.out.println();
         System.out.println("`/admins/{admin-id}/education-packages POST` got triggered");
         System.out.println("Admin Id : " + adminId);
+        rq.setAdminId(adminId);
+        System.out.println(rq.getCorrespondingAdditionalInfo());
+        System.out.println(rq.getCorrespondingAdditionalInfo().get("1").getTutorAdmissionPercentage());
     }
 
     @PostMapping("/admins/{admin-id}/education-packages/filter-packages/")
@@ -49,8 +51,7 @@ public class AdminController {
         System.out.println();
         System.out.println("`/admins/{admin-id}/education-packages/filter-packages/ POST` got triggered");
         System.out.println("Admin Id : " + adminId);
+        rq.setAdminId(adminId);
     }
-
-
 
 }
