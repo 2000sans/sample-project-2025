@@ -53,4 +53,5 @@ public class AdminController {
         System.out.println("Admin Id : " + rq.getAdminId());
     }
 
+    
 }
