@@ -23,25 +23,24 @@ public class AdminController {
     void createTutor(@PathVariable("admin-id") String adminId, @RequestBody CreateTutorRequest rq){
         System.out.println();
         System.out.println("`/admins/{admin-id}/tutors POST` got triggered");
-        System.out.println("Admin Id : " + adminId);
         rq.setAdminId(adminId);
+        System.out.println("Admin Id : " + rq.getAdminId());
     }
 
     @PostMapping("/admins/{admin-id}/add-subject-profiles")
     void createSubjectProfile(@PathVariable("admin-id") String adminId, @RequestBody CreateSubjectProfileRequest rq){
         System.out.println();
         System.out.println("`/admins/{admin-id}/add-subject-profiles POST` got triggered");
-        System.out.println("Admin Id : " + adminId);
         rq.setAdminId(adminId);
-
+        System.out.println("Admin Id : " + rq.getAdminId());
     }
 
     @PostMapping("/admins/{admin-id}/education-packages")
     void createEducationPackage(@PathVariable("admin-id") String adminId, @RequestBody CreateEducationPackageRequest rq){
         System.out.println();
         System.out.println("`/admins/{admin-id}/education-packages POST` got triggered");
-        System.out.println("Admin Id : " + adminId);
         rq.setAdminId(adminId);
+        System.out.println("Admin Id : " + rq.getAdminId());
         System.out.println(rq.getCorrespondingAdditionalInfo());
         System.out.println(rq.getCorrespondingAdditionalInfo().get("1").getTutorAdmissionPercentage());
     }
@@ -50,8 +49,8 @@ public class AdminController {
     void filterEducationPackages(@PathVariable("admin-id") String adminId, @RequestBody SortEducationPackagesRequest rq) {
         System.out.println();
         System.out.println("`/admins/{admin-id}/education-packages/filter-packages/ POST` got triggered");
-        System.out.println("Admin Id : " + adminId);
         rq.setAdminId(adminId);
+        System.out.println("Admin Id : " + rq.getAdminId());
     }
 
 }
