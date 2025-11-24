@@ -18,7 +18,7 @@ public class AdminController {
     @GetMapping("/admins/{admin-id}/view-admin-profile")
     void viewAdminProfile(@PathVariable("admin-id") String adminId){
         System.out.println();
-        System.out.println("`/admins/view-admin-profile GET` got triggered");
+        System.out.println("`admins/{admin-id}/view-admin-profile GET` got triggered");
         System.out.println("Admin Id : " + adminId);
     }
 
