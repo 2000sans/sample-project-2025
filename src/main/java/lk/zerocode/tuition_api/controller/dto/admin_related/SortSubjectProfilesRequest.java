@@ -4,16 +4,16 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class CreateSubjectProfileRequest {
+public class SortSubjectProfilesRequest {
 
     private String adminId;
     private String tutorId;
     private String subjectName;
     private String subjectType;
-    private String examType;
-    private String examYear;
     private String subjectMedium;
     private String subjectStream;
+    private String examType;
+    private String examYear;
 
     public String getAdminId() {
         return adminId;
@@ -47,22 +47,6 @@ public class CreateSubjectProfileRequest {
         this.subjectType = subjectType;
     }
 
-    public String getExamType() {
-        return examType;
-    }
-
-    public void setExamType(String examType) {
-        this.examType = examType;
-    }
-
-    public String getExamYear() {
-        return examYear;
-    }
-
-    public void setExamYear(String examYear) {
-        this.examYear = examYear;
-    }
-
     public String getSubjectMedium() {
         return subjectMedium;
     }
@@ -77,5 +61,21 @@ public class CreateSubjectProfileRequest {
 
     public void setSubjectStream(String subjectStream) {
         this.subjectStream = subjectStream;
+    }
+
+    public String getExamType() {
+        return examType;
+    }
+
+    public void setExamType(String examType) {
+        this.examType = examType;
+    }
+
+    public String getExamYear() {
+        return examYear;
+    }
+
+    public void setExamYear(String examYear) {
+        this.examYear = examYear;
     }
 }

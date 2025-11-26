@@ -35,6 +35,19 @@ public class AdminController {
         System.out.println("Admin Id : " + rq.getAdminId());
     }
 
+    @PostMapping("/admins/{admin-id}/filter-subject-profiles")
+    SortSubjectProfilesResponse filterSubjectProfile(@PathVariable("admin-id") String adminId, @RequestBody SortSubjectProfilesRequest rq){
+        System.out.println();
+        System.out.println("`/admins/{admin-id}/filter-subject-profiles POST` got triggered");
+        rq.setAdminId(adminId);
+        System.out.println("Admin Id : " + rq.getAdminId());
+        SortSubjectProfilesResponse rs =  new SortSubjectProfilesResponse();
+        rs.setSubjectProfileId("8090");
+
+        return rs;
+
+    }
+
     @PostMapping("/admins/{admin-id}/education-packages")
     void createEducationPackage(@PathVariable("admin-id") String adminId, @RequestBody CreateEducationPackageRequest rq){
         System.out.println();
@@ -51,7 +64,8 @@ public class AdminController {
         System.out.println("`/admins/{admin-id}/education-packages/filter-packages/ POST` got triggered");
         rq.setAdminId(adminId);
         System.out.println("Admin Id : " + rq.getAdminId());
+        System.out.println("Tutor Id : " + rq.getTutorId());
     }
 
-    
+
 }

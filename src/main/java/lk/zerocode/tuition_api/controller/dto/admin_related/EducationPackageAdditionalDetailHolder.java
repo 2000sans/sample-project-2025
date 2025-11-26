@@ -6,12 +6,21 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class EducationPackageAdditionalDetailHolder {
 
+    private String subjectProfileId;
     private Float tutorAdmissionPercentage;
     private Float tutorRentalPercentage;
     private Float tutorChargePercentage;
     private Float instituteChargePercentageForTutor;
     private Double tutorEarn;
     private Double instituteEarn;
+
+    public String getSubjectProfileId() {
+        return subjectProfileId;
+    }
+
+    public void setSubjectProfileId(String subjectProfileId) {
+        this.subjectProfileId = subjectProfileId;
+    }
 
     public Float getTutorAdmissionPercentage() {
         return tutorAdmissionPercentage;
